@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PixelPulse AI | Video Generator</title>
+  <link rel="stylesheet" href="AI.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="logo" href="AI.html">PixelPulse</a>
+      <nav>
+        <a href="AI.html">Home</a>
+        <a href="../Mix%20editor%20app/mix.html">Image Lab</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">AI Video Studio</span>
+          <h1>Create cinematic clips from text prompts.</h1>
+          <p>Use a clean, modern generator interface to describe the scene you want and produce a short AI-powered video preview. Add your own AI endpoint to power real renders.</p>
+          <div class="pill-grid">
+            <span class="pill">Cinematic output</span>
+            <span class="pill">Fast preview</span>
+            <span class="pill">Prompt-driven</span>
+            <span class="pill">Modern design</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h2>Why PixelPulse?</h2>
+          <div class="hero-items">
+            <div class="hero-item">
+              <strong>Clear interface</strong>
+              <span>Everything you need for a prompt, style and duration in one place.</span>
+            </div>
+            <div class="hero-item">
+              <strong>Smart preview</strong>
+              <span>See generation status and sample playback as soon as your video is ready.</span>
+            </div>
+            <div class="hero-item">
+              <strong>API-friendly</strong>
+              <span>Plug in your AI service endpoint and API key to power real video creation.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="generator">
+        <div class="panel">
+          <div class="panel-head">
+            <strong>Build your video</strong>
+            <span>Enter an expressive prompt, select a style, and tap generate.</span>
+          </div>
+
+          <label>
+            Prompt
+            <textarea id="prompt" placeholder="e.g. A futuristic carnival over water, glowing lanterns and flying robots"></textarea>
+          </label>
+
+          <div class="row">
+            <label>
+              Duration
+              <select id="duration">
+                <option value="8">8 seconds</option>
+                <option value="12" selected>12 seconds</option>
+                <option value="18">18 seconds</option>
+                <option value="25">25 seconds</option>
+              </select>
+            </label>
+
+            <label>
+              Style
+              <select id="style">
+                <option value="cinematic" selected>Cinematic</option>
+                <option value="dreamy">Dreamy</option>
+                <option value="abstract">Abstract</option>
+                <option value="documentary">Documentary</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            AI endpoint (optional)
+            <input id="apiUrl" placeholder="https://api.example.com/generate-video" />
+          </label>
+
+          <label>
+            API key (optional)
+            <input id="apiKey" placeholder="Paste your API key here" />
+          </label>
+
+          <p style="color: var(--muted); margin-top: 0.5rem; font-size: 0.95rem;">No endpoint required — use the built-in demo generator instantly.</p>
+
+          <div class="actions">
+            <button class="primary" id="generateBtn" type="button">Generate video</button>
+            <button class="secondary" id="resetBtn" type="button">Reset fields</button>
+          </div>
+        </div>
+
+        <div class="preview-panel">
+          <div class="preview-header">
+            <strong>Preview</strong>
+            <span>Watch the latest generated clip or configure your endpoint.</span>
+          </div>
+
+          <div class="preview-frame" id="previewFrame">
+            <div class="placeholder">
+              <strong>Waiting for your prompt.</strong>
+              <p>Enter a prompt above and click Generate to start producing an AI video.</p>
+            </div>
+            <video id="previewVideo" controls hidden playsinline></video>
+          </div>
+
+          <div class="log" id="logArea">Status: Waiting for input</div>
+          <div class="actions" style="justify-content:flex-start; margin-top:1rem;">
+            <button class="secondary" id="downloadBtn" type="button" hidden>Download clip</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>Designed for a sleek AI video workflow with HTML, CSS, and JavaScript.</footer>
+     <footer><b>Made By Assem Bakr</b></footer>
+  </div>
+
+  <script src="AI.js"></script>
+</body>
+</html>
